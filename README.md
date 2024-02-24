@@ -14,7 +14,7 @@
 3. Убедитесь, что в вашей ОС установлен docker.
 4. Зарегистрируйте аккаунт на сайте https://hub.docker.com/, выполните команду docker login и введите логин, пароль.
 
-![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/master/img/terraform1.png)
+![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/main/img/terraform1.png)
 
 ------
 
@@ -38,7 +38,7 @@ personal.auto.tfvars
 
 3. Выполните код проекта. Найдите  в state-файле секретное содержимое созданного ресурса **random_password**, пришлите в качестве ответа конкретный ключ и его значение.
 
-![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/master/img/terraform2.png)
+![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/main/img/terraform2.png)
 
 ```
 "name": "random_string"
@@ -48,7 +48,7 @@ personal.auto.tfvars
 4. Раскомментируйте блок кода, примерно расположенный на строчках 29–42 файла **main.tf**.
 Выполните команду ```terraform validate```. Объясните, в чём заключаются намеренно допущенные ошибки. Исправьте их.
 
-![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/master/img/terraform3.png)
+![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/main/img/terraform3.png)
 
 - не задано имя image 
 - не корректное имя контейнера
@@ -73,7 +73,7 @@ resource "docker_container" "nginx" {
 }
 ```
 
-![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/master/img/terraform4.png)
+![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/main/img/terraform4.png)
 
 6. Замените имя docker-контейнера в блоке кода на ```hello_world```. Не перепутайте имя контейнера и имя образа. Мы всё ещё продолжаем использовать name = "nginx:latest". Выполните команду ```terraform apply -auto-approve```.
 
@@ -93,7 +93,7 @@ resource "docker_container" "nginx" {
   }
 }
 ```
-![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/master/img/terraform5.png)
+![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/main/img/terraform5.png)
 
 Объясните своими словами, в чём может быть опасность применения ключа  ```-auto-approve```. Догадайтесь или нагуглите зачем может пригодиться данный ключ? В качестве ответа дополнительно приложите вывод команды ```docker ps```.
 
@@ -101,7 +101,7 @@ resource "docker_container" "nginx" {
 
 8. Уничтожьте созданные ресурсы с помощью **terraform**. Убедитесь, что все ресурсы удалены. Приложите содержимое файла **terraform.tfstate**. 
 
-![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/master/img/terraform6.png)
+![Terraform](https://github.com/gaming4funNel/terraform-hw-1/blob/main/img/terraform6.png)
 
 9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
 
